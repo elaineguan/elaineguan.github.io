@@ -7,6 +7,82 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+
+.project-overview {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.overview-section {
+    flex: 0 0 70%; /* 60% width for the Overview section */
+    margin-right: 50px; /* Space between Overview and Details sections */
+}
+
+.details-section {
+    flex: 0 0 30%; /* 40% width for the Role, Tools, and Timeline section */
+}
+
+.project-details {
+    margin-top: 20px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 5px;
+}
+
+.title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #585858; /* Dark gray */
+    margin-right: 40px;
+    text-transform: uppercase;
+}
+
+.description {
+    padding-top: 1.1em; /* or any value you prefer */
+    font-size: 0.9em; /* same as body/p font size */
+    font-weight: 300; /* same as body/p font weight */
+    line-height: 1.75; /* same as body/p line height */
+    margin: 0 0 2em 0; /* same as p margin */
+    text-transform: none; /* remove uppercase transform */
+    letter-spacing: 0; /* remove letter spacing */
+	margin-bottom: 0.6em;
+}
+
+.separator {
+    border: none;
+    border-top: 1px solid #e0e0e0; /* Very light gray */
+    padding: 0;
+    margin: 2px 0;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .project-overview {
+        flex-direction: column; /* Stack vertically */
+    }
+
+    .overview-section,
+    .details-section {
+        flex: 0 0 100%; /* Full width for both sections */
+        margin-right: 0; /* Remove margin between sections */
+        margin-bottom: 20px; /* Add space between sections */
+    }
+
+    .title {
+        margin-right: 0; /* Remove margin for smaller screens */
+    }
+}
+
+
+
+
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
