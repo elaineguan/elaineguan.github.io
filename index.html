@@ -20,44 +20,61 @@
 					<header id="header">
 						<div class="inner">
 
-							<!-- Logo -->
+							<!-- Logo 
 								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/grayraccoon.png" alt="" style="width: 60px; height: 60px;" /></span><span class="title">Elaine Guan</span>								</a>
+									<span class="symbol"><img src="images/grayraccoon.png" alt="" style="width: 60px; height: 60px;" /></span><span class="title">Elaine Guan</span></a>-->
 
 							<!-- Nav -->
-								<nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
+								
 
 						</div>
 					</header>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="tutoring.html">Tutoring Website Redesign</a></li>
-							<li><a href="raccoon.html">Raccoon Web Story</a></li>
-							<li><a href="bruin.html">Bruin Menu Checker </a></li>
-							<li><a href="about.html">About</a></li>
-						</ul>
-					</nav>
+
+				<!-- Top Navigation Bar -->
+				<nav id="top-menu">
+					<ul>
+						<li><a href="index.html" class="logo">
+							<div class="symbol"><img src="images/grayraccoon2.png" alt="" style="width: 60px; height: 60px;" /></div>
+							<span class="title">Elaine Guan</span>
+						</a></li>
+				
+						<!-- Dropdown for WORK -->
+						<li class="dropdown">
+							<a class="dropdown-toggle">WORK</a>
+							<div class="dropdown-content">
+								<a href="tutoring.html">Tutoring Website Redesign</a>
+								<a href="raccoon.html">Raccoon Web Story</a>
+								<a href="bruin.html">Bruin Menu Checker</a>
+							</div>
+						</li>
+				
+						<li><a href="about.html">ABOUT</a></li>
+						<li><a href="https://drive.google.com/file/d/1Ay7Tpg363TIfcJe9-VPDvfuf-nF8i93x/view?usp=sharing" target="_blank">RESUME</a></li>
+					</ul>
+				</nav>
+				
 
 				<!-- Main -->
 				<div id="main">
 					<div class="inner">
 						<header>
-							<h1><strong>Hi, I'm Elaine.</strong></h1><h5>I'm a <em>linguistics</em> and <em>computer science</em> student at UCLA
-								<br> passionate about compelling design and coding vibrant experiences!</h5>
-
-						<div style="text-align: center;">
-    						<a href="https://drive.google.com/file/d/1Ay7Tpg363TIfcJe9-VPDvfuf-nF8i93x/view?usp=sharing" target="_blank" class="button">Resume</a>
 							<br>
+							<br>
+							<h1><strong>Hi, I'm Elaine.
+								<br>
+							</strong></h1><h5>I'm a <em>linguistics</em> and <em>computer science</em> student at UCLA
+								<br> passionate about compelling design and coding vibrant experiences!</h5>
+								<br>
+							
+						<div style="text-align: center;">
+							<br>
+							
 						</div>
 						</header>
+						<br>
+						<br>
+						<br>
 							
 						<section class="tiles">					
 								
@@ -92,7 +109,7 @@
 								<h6>Created an interactive story that teaches about retirement and investment strategies.</h6>
 								
 							</article>
-
+								
 							<article class="style1">
 								<span class="image">
 									<img src="images/bmenuindex.png" alt="" />
@@ -108,55 +125,17 @@
 								<h6>Designed and implemented a website for UCLA students to check when their favorite dishes are available.</h6>
 
 							</article>
-
-
-							<!--
-							<article class="style3">
-								<span class="image">
-									<img src="images/raccooncover.png" alt="" />
-								</span>
-								<a href="project3.html">
-									<div class="content">
-										<p></p>
-									</div>
-								</a>
-
-								<h4>A Raccon's Road to Retirement</h4>
-								<p>An interactive story that teaches about retirement savings and investments through a cartoon raccoon's journey to financial literacy.</p>
-
-							</article>
-							 <article class="style4">
-								<span class="image">
-									<img src="images/pic04.jpg" alt="" />
-								</span>
-								<a href="generic.html">
-									<h2>Tempus</h2>
-									<div class="content">
-										<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-									</div>
-								</a>
-							</article>
-							<article class="style5">
-								<span class="image">
-									<img src="images/pic05.jpg" alt="" />
-								</span>
-								<a href="generic.html">
-									<h2>Aliquam</h2>
-									<div class="content">
-										<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-									</div>
-								</a>
-							</article>
-							
 						</section>
 					</div>
-				</div> -->
-				
-
-			</section>
-		</div>
-	</div>
-	
+				</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 
 	<!-- Footer -->
 		<footer id="footer">
@@ -191,7 +170,7 @@
 					</ul>
 				</section>
 				<ul class="copyright">
-					<li>&copy; Elaine Guan 2024</li>
+					<li>&copy; Elaine Guan 2024 | Coded with love ♥︎ </li>
 			</div>
 		</footer>
 
@@ -204,6 +183,17 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+			<script>
+				window.addEventListener('scroll', function() {
+					var headerHeight = document.querySelector('header').offsetHeight;
+					if (window.scrollY > headerHeight) {
+						document.body.classList.add('is-scrolled');
+					} else {
+						document.body.classList.remove('is-scrolled');
+					}
+				});
+			</script>
+			
 			<script>
 				document.addEventListener('contextmenu', event => event.preventDefault());
 				document.addEventListener('keydown', event => {

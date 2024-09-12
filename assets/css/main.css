@@ -7,6 +7,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+
 .expand-on-hover {
     transition: transform 0.25s ease-in-out;
 }
@@ -201,6 +202,9 @@ input, select, textarea {
 			transition: none !important;
 		}
 
+
+
+		
 /* Type */
 
 	body, input, select, textarea {
@@ -2677,20 +2681,25 @@ input, select, textarea {
 
 /* Tiles */
 
+
+/* General tile styles */
 .tiles article {
     border: none;
     box-shadow: none;
     transition: none;
     text-align: center;
     margin-bottom: 2em;
+    position: relative;
 }
 
+/* Image styling */
 .tiles article img {
     width: 100%;
     height: auto;
     transition: none;
 }
 
+/* Content inside the tiles */
 .tiles article .content {
     padding: 1em;
 }
@@ -2703,287 +2712,84 @@ input, select, textarea {
     margin: 0.5em 0 0;
 }
 
-	.tiles {
-		display: -moz-flex;
-		display: -webkit-flex;
-		display: -ms-flex;
-		display: flex;
-		-moz-flex-wrap: wrap;
-		-webkit-flex-wrap: wrap;
-		-ms-flex-wrap: wrap;
-		flex-wrap: wrap;
-		position: relative;
-		margin: -2.5em 0 0 -2.5em;
-	}
+/* Layout for tiles */
+.tiles {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    margin: -2.5em 0 0 -2.5em;
+}
 
-		.tiles article {
-			-moz-transition: -moz-transform 0.5s ease, opacity 0.5s ease;
-			-webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
-			-ms-transition: -ms-transform 0.5s ease, opacity 0.5s ease;
-			transition: transform 0.5s ease, opacity 0.5s ease;
-			position: relative;
-			width: calc(33.33333% - 2.5em);
-			margin: 2.5em 0 0 2.5em;
-		}
+/* Main article styling */
+.tiles article {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    position: relative;
+    width: calc(33.33333% - 2.5em);
+    margin: 2.5em 0 0 2.5em;
+}
 
-			.tiles article > .image {
-				-moz-transition: -moz-transform 0.5s ease;
-				-webkit-transition: -webkit-transform 0.5s ease;
-				-ms-transition: -ms-transform 0.5s ease;
-				transition: transform 0.5s ease;
-				position: relative;
-				display: block;
-				width: 100%;
-				border-radius: 4px;
-				overflow: hidden;
-			}
+/* Anchor tag styling - make sure the link covers the entire article */
+.tiles article a {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3; /* Ensure the link is above the image */
+    text-decoration: none; /* Remove underline for the whole link */
+    color: inherit; /* Keep the text color */
+    outline: none; /* Remove dotted outline */
+    border: none;  /* Ensure no border or outline */
+}
 
-				.tiles article > .image img {
-					display: block;
-					width: 100%;
-				}
+/* Ensure no underline on tile text */
+.tiles article a h2,
+.tiles article a p,
+.tiles article a span {
+    text-decoration: none !important; /* Forcefully remove underline */
+}
 
-				.tiles article > .image:before {
-					pointer-events: none;
-					-moz-transition: background-color 0.5s ease, opacity 0.5s ease;
-					-webkit-transition: background-color 0.5s ease, opacity 0.5s ease;
-					-ms-transition: background-color 0.5s ease, opacity 0.5s ease;
-					transition: background-color 0.5s ease, opacity 0.5s ease;
-					content: '';
-					display: block;
-					position: absolute;
-					top: 0;
-					left: 0;
-					width: 100%;
-					height: 100%;
-					opacity: 1.0;
-					z-index: 1;
-					opacity: 0.8;
-					border-radius: 15px;
+/* Image hover effect */
+.tiles article > .image {
+    position: relative;
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1;
+    text-decoration: none !important;
+}
 
-				}
+/* Pop-up effect on hover */
+.tiles article:hover > .image {
+    transform: scale(1.05); /* Scale image slightly */
+}
 
-				.tiles article > .image:after {
-					pointer-events: none;
-					-moz-transition: opacity 0.5s ease;
-					-webkit-transition: opacity 0.5s ease;
-					-ms-transition: opacity 0.5s ease;
-					transition: opacity 0.5s ease;
-					content: '';
-					display: block;
-					position: absolute;
-					top: 0;
-					left: 0;
-					width: 100%;
-					height: 100%;
-					background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cstyle%3Eline %7B stroke-width: 0.25px%3B stroke: %23ffffff%3B %7D%3C/style%3E%3Cline x1='0' y1='0' x2='100' y2='100' /%3E%3Cline x1='100' y1='0' x2='0' y2='100' /%3E%3C/svg%3E");
-					background-position: center;
-					background-repeat: no-repeat;
-					background-size: 100% 100%;
-					opacity: 0.25;
-					z-index: 2;
-					border-radius: 15px;
+/* Remove the X background effect */
+.tiles article > .image:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: none;
+    opacity: 0;
+    z-index: 2;
+    border-radius: 15px;
+    text-decoration: none !important;
+}
 
-				}
+/* Optional: Add a smooth transition for the scale effect on smaller screens */
+@media screen and (max-width: 736px) {
+    .tiles article:hover > .image {
+        transform: scale(1.02); /* Slightly smaller pop-up on smaller screens */
+    }
+}
 
-			.tiles article > a {
-				display: -moz-flex;
-				display: -webkit-flex;
-				display: -ms-flex;
-				display: flex;
-				-moz-flex-direction: column;
-				-webkit-flex-direction: column;
-				-ms-flex-direction: column;
-				flex-direction: column;
-				-moz-align-items: center;
-				-webkit-align-items: center;
-				-ms-align-items: center;
-				align-items: center;
-				-moz-justify-content: center;
-				-webkit-justify-content: center;
-				-ms-justify-content: center;
-				justify-content: center;
-				-moz-transition: background-color 0.5s ease, -moz-transform 0.5s ease;
-				-webkit-transition: background-color 0.5s ease, -webkit-transform 0.5s ease;
-				-ms-transition: background-color 0.5s ease, -ms-transform 0.5s ease;
-				transition: background-color 0.5s ease, transform 0.5s ease;
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				padding: 1em;
-				border-radius: 4px;
-				border-bottom: 0;
-				color: #ffffff;
-				text-align: center;
-				text-decoration: none;
-				z-index: 3;
-				border-radius: 15px;
-
-			}
-
-				.tiles article > a > :last-child {
-					margin: 0;
-				}
-
-				.tiles article > a:hover {
-					color: #ffffff !important;
-				}
-
-				.tiles article > a h2 {
-					margin: 0;
-				}
-
-				.tiles article > a .content {
-					-moz-transition: max-height 0.5s ease, opacity 0.5s ease;
-					-webkit-transition: max-height 0.5s ease, opacity 0.5s ease;
-					-ms-transition: max-height 0.5s ease, opacity 0.5s ease;
-					transition: max-height 0.5s ease, opacity 0.5s ease;
-					width: 100%;
-					max-height: 0;
-					line-height: 1.5;
-					margin-top: 0.35em;
-					opacity: 0;
-				}
-
-					.tiles article > a .content > :last-child {
-						margin-bottom: 0;
-					}
-
-			/*
-			.tiles article.style1 > .image:before {
-				background-color: #efd4db;
-			}
-					
-
-			.tiles article.style2 > .image:before {
-				background-color: #cee7f6;
-			}
-			
-			.tiles article.style3 > .image:before {
-				background-color: #b5e7de;
-			}
-			*/
-		
-
-			.tiles article.style4 > .image:before {
-				background-color: #c75b9b;
-			}
-
-			.tiles article.style5 > .image:before {
-				background-color: #ae85ca;
-			}
-
-			.tiles article.style6 > .image:before {
-				background-color: #8499e7;
-			}
-
-			body:not(.is-touch) .tiles article:hover > .image {
-				-moz-transform: scale(1.1);
-				-webkit-transform: scale(1.1);
-				-ms-transform: scale(1.1);
-				transform: scale(1.1);
-			}
-			
-			body:not(.is-touch) .tiles article:hover > .image:before {
-				background-color: #333333;
-				opacity: 0.35;
-				border-radius: 15px;
-
-			}
-			
-			body:not(.is-touch) .tiles article:hover > .image:after {
-				opacity: 0;
-			}
-			
-			/* Add this new rule */
-			body:not(.is-touch) .tiles article.style1:hover > .image:before,
-			body:not(.is-touch) .tiles article.style2:hover > .image:before,
-			body:not(.is-touch) .tiles article.style3:hover > .image:before {
-				border-radius: 15px;
-			}
-			
-			body:not(.is-touch) .tiles article:hover .content {
-				max-height: 15em;
-				opacity: 1;
-			}
-
-		* + .tiles {
-			margin-top: 2em;
-		}
-
-		body.is-preload .tiles article {
-			-moz-transform: scale(0.9);
-			-webkit-transform: scale(0.9);
-			-ms-transform: scale(0.9);
-			transform: scale(0.9);
-			opacity: 0;
-		}
-
-		body.is-touch .tiles article .content {
-			max-height: 15em;
-			opacity: 1;
-		}
-
-		@media screen and (max-width: 1280px) {
-
-			.tiles {
-				margin: -1.25em 0 0 -1.25em;
-			}
-
-				.tiles article {
-					width: calc(33.33333% - 1.25em);
-					margin: 1.25em 0 0 1.25em;
-				}
-
-		}
-
-		@media screen and (max-width: 980px) {
-
-			.tiles {
-				margin: -2.5em 0 0 -2.5em;
-			}
-
-				.tiles article {
-					width: calc(50% - 2.5em);
-					margin: 2.5em 0 0 2.5em;
-				}
-
-		}
-
-		@media screen and (max-width: 736px) {
-
-			.tiles {
-				margin: -1.25em 0 0 -1.25em;
-			}
-
-				.tiles article {
-					width: calc(50% - 1.25em);
-					margin: 1.25em 0 0 1.25em;
-				}
-
-					.tiles article:hover > .image {
-						-moz-transform: scale(1.0);
-						-webkit-transform: scale(1.0);
-						-ms-transform: scale(1.0);
-						transform: scale(1.0);
-					}
-
-		}
-
-		@media screen and (max-width: 480px) {
-
-			.tiles {
-				margin: 0;
-			}
-
-				.tiles article {
-					width: 100%;
-					margin: 1.25em 0 0 0;
-				}
-
-		}
 
 /* Header */
 
@@ -3310,19 +3116,175 @@ body.is-menu-visible #menu {
 		opacity: 1;
 	}
 
-/* Main */
+/* Top Menu Navigation */
+#top-menu {
+    width: 100%;
+    background-color: transparent; /* Change background color to white */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    font-family: 'DM Sans', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Add some horizontal padding */
+}
 
-	#main {
-		padding: 0em 0 6em 0 ;
-	}
+/* Logo styles */
+#top-menu .logo {
+    margin-left: 0; /* Ensure logo stays on the left */
+    display: flex;
+    align-items: center;
+	font-size: 1em;
 
-		@media screen and (max-width: 736px) {
+}
 
-			#main {
-				padding: 0em 0 4em 0 ;
-			}
+#top-menu .logo .symbol {
+    margin-right: 10px;
 
-		}
+}
+
+#top-menu .title {
+    color: black; /* Change logo title color to black */
+}
+
+/* Navigation menu items */
+#top-menu ul {
+    display: flex;
+    justify-content: flex-end; /* Align navigation items to the right */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Ensure menu spans the full width */
+}
+
+#top-menu ul li {
+    margin: 0 20px;
+}
+
+#top-menu ul li a {
+    display: inline-block;
+    padding: 30px 5px 15px 20px; /* Increase top padding to 30px */
+    color: black; /* Text color */
+    text-decoration: none; /* Remove underline */
+    font-weight: 600;
+    font-size: 0.8em;
+    letter-spacing: 0.05em;
+    outline: none; /* Remove dotted outline on focus */
+    border: none; /* Remove any border if present */
+}
+
+/* Remove dotted line when the link is focused or active */
+#top-menu ul li a:focus,
+#top-menu ul li a:active {
+    outline: none; /* Remove the focus outline */
+    text-decoration: none; /* Ensure no underline on focus */
+}
+
+#top-menu ul li a:hover {
+    background-color: transparent; /* Ensure no background block appears */
+    color: #f2849e; /* Set text color to pink */
+    text-decoration: none; /* Ensure no underline on hover */
+}
+
+/* Positioning logo on the left and menu items on the right */
+#top-menu ul li:first-child {
+    margin-right: auto; /* Push the first item (logo) to the left */
+}
+
+/* Adjust content padding to account for fixed top menu */
+#main {
+    padding-top: 60px; /* Adjust based on menu height */
+}
+
+/* Dropdown container */
+#top-menu .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown content - hidden by default */
+#top-menu .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    min-width: 200px;
+    padding: 10px 0;
+    z-index: 1;
+    top: 60px; /* Adjust based on menu height */
+    text-align: left;
+}
+
+/* Dropdown content when visible */
+#top-menu .dropdown-content a {
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.75em;
+}
+
+/* Line separator between items */
+#top-menu .dropdown-content a:not(:last-child) {
+    border-bottom: 1px solid rgb(192, 192, 192);
+}
+
+/* Show the dropdown content on hover */
+#top-menu .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Add a dropdown arrow after the "WORK" text */
+#top-menu .dropdown-toggle:after {
+    content: ' ▼'; /* Add a downward arrow */
+    font-size: 0.6em;
+    margin-left: 5px;
+}
+
+/* Dropdown hover style */
+#top-menu .dropdown-content a:hover {
+    background-color: transparent;
+    color: #f2849e;
+}
+
+#top-menu .dropdown-toggle {
+    cursor: pointer; /* Still show the pointer on hover to indicate interactivity */
+    font-weight: 600;
+    color: black;
+    text-transform: uppercase;
+}
+
+#top-menu .dropdown-toggle:after {
+    content: ' ▼'; /* Add the arrow */
+    font-size: 0.6em;
+    margin-left: 5px;
+}
+
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 736px) {
+    #top-menu ul {
+        flex-direction: column;
+        align-items: flex-end; /* Align menu items to the right on smaller screens */
+    }
+
+    #top-menu ul li {
+        margin: 10px 0;
+    }
+
+    #main {
+        padding-top: 80px; /* Adjust for smaller screens */
+    }
+
+    #top-menu .logo {
+        margin-left: 0;
+        order: 1; /* Ensure logo stays on the left for small screens */
+    }
+}
+
+
+
 
 /* Footer */
 
