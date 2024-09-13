@@ -1,189 +1,111 @@
 <!DOCTYPE HTML>
 <html>
-    <head>
-        <title>Elaine Guan - About Me</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="assets/css/main.css" />
-        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-        <link rel="icon" type="image/png" href="images/avatar.png">
+<head>
+    <title>Elaine Guan - About Me</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <link rel="icon" type="image/png" href="images/avatar.png">
+    <style>
+        .tiles {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .tiles article {
+            width: 24%;
+            box-sizing: border-box;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .tiles img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body class="is-preload">
+    <div id="wrapper">
+        <header id="header">
+            <div class="inner"></div>
+        </header>
 
-        <style>
-            .tiles {
-                display: flex;
-                justify-content: space-between;
-                flex-wrap: wrap;
-            }
-            .tiles article {
-                width: 24%; /* Ensures four articles fit in one line */
-                box-sizing: border-box;
-                text-align: center;
-                margin-bottom: 20px; /* Adds spacing between rows if needed */
-            }
-            .tiles img {
-                width: 100%;
-                height: auto;
-            }
-        </style>
-    </head>
-    <body class="is-preload">
-        <!-- Wrapper -->
-            <div id="wrapper">
-
-                <!-- Header -->
-                    <header id="header">
-                        <div class="inner">
-
-                        </div>
-                    </header>
-
-                <!-- Top Navigation Bar -->
-				<nav id="top-menu">
-					<ul>
-						<li><a href="index.html" class="logo">
-							<div class="symbol"><img src="images/grayraccoon2.png" alt="" style="width: 60px; height: 60px;" /></div>
-							<span class="title">Elaine Guan</span>
-						</a></li>
-				
-						<!-- Dropdown for WORK -->
-						<li class="dropdown">
-							<a class="dropdown-toggle">WORK</a>
-							<div class="dropdown-content">
-								<a href="tutoring.html">Tutoring Website Redesign</a>
-								<a href="raccoon.html">Raccoon Web Story</a>
-								<a href="bruin.html">Bruin Menu Checker</a>
-							</div>
-						</li>
-				
-						<li><a href="about.html">ABOUT</a></li>
-						<li><a href="https://drive.google.com/file/d/1Ay7Tpg363TIfcJe9-VPDvfuf-nF8i93x/view?usp=sharing" target="_blank">RESUME</a></li>
-					</ul>
-				</nav>
-
-
-                    </html>
-                    
-                    
-                
-                    <div id="main">
-                        <div class="inner">
-                            <header>
-                                <h1 style="text-align: left;">About Me</h1>
-                                <br>
-                                <br>
-                                <img src="images/headshot.jpg" alt="" style="width:40%; height:auto; margin:10px 20px 10px 40px; float:right;">
-                                <div style="margin-right: 40px;"> <!-- added container div -->
-                                <p>Hi, I'm Elaine, a second-year linguistics and computer science student at UCLA! I'm passionate about blending language, storytelling, and technology to design vibrant experiences that resonate with users.  
-                                    <br>
-                                    <br>
-                                    I love diving into projects that challenge me to think creatively and technically, whether it's designing intuitive user interfaces or crafting interactive web stories. 
-                                    My current focus is on product design and front-end development, aiming to create seamless and user-friendly digital experiences.
-
-                                    <br>
-                                    <br> Feel free to contact me at  <a href="mailto:elaineguan@ucla.edu">elaineguan@ucla.edu!</a>
-                                    </p>
-                                
-                                
-                                
-                                <strong>When I'm not coding or designing, you can find me...</strong><br>
-								<br> 🍵 sipping on green tea and matcha lattes
-                                <br> ✒️ journaling & penpalling
-                                <br> 🐶 petting my dog, Filbert
-                                <br> ✈️ traveling and trying new cuisines
-                                <br> 📖 reading <a href="https://www.goodreads.com/review/list/94226881-elaine?shelf=favorites&utf8=%E2%9C%93" target="_blank">(view my favorites here!)</a>
-                                <br> 🍲 making food for family and friends!
-								</div>
-								<br>
-								<br>
-
-                                <h2><a href="artwork.html">🎨 View my artwork here!</a></h2>
-                                <br>
-								<br>
-								<br>
-								<br>
-
-
-                            <section class="tiles">
-                                <!-- Main 
-                                <article>
-                                    <img src="images/about1.jpg" alt="Matcha" />
-                                    <h2>Matcha Enthusiast</h2>
-                                    <p>I love exploring different cafes!</p>
-                                </article>
-                                <article>
-                                    <img src="images/about2.jpg" alt="Tutoring Session" />
-                                    <h2>Tutoring Session</h2>
-                                    <p>Helping students improve their coding skills during a tutoring session.</p>
-                                </article>
-                                <article>
-                                    <img src="images/about3.jpg" alt="Team Project" />
-                                    <h2>Team Project</h2>
-                                    <p>Collaborating with my team on a software development project.</p>
-                                </article>
-                                <object data="images/portfolio.pdf" width="100%" height="500px" type="application/pdf">
-                                    <p>This browser does not support PDFs. Please download the PDF to view it: <a href="path/to/your/pdf/file.pdf">Download PDF</a></p>
-                                    -->
-                                  </object>
-                                </article>
-                            </section>
-                        </div>
+        <nav id="top-menu">
+            <ul>
+                <li>
+                    <a href="index.html" class="logo">
+                        <div class="symbol"><img src="images/grayraccoon2.png" alt="" style="width: 60px; height: 60px;" /></div>
+                        <span class="title">Elaine Guan</span>
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle">WORK</a>
+                    <div class="dropdown-content">
+                        <a href="tutoring.html">Tutoring Website Redesign</a>
+                        <a href="raccoon.html">Raccoon Web Story</a>
+                        <a href="bruin.html">Bruin Menu Checker</a>
                     </div>
-                    
-                <!-- Footer -->
-                    <footer id="footer">
-                        <div class="inner">
-                            <!--
-                            <section>
-                                <h2>Get in touch</h2>
-                                <form method="post" action="#">
-                                    <div class="fields">
-                                        <div class="field half">
-                                            <input type="text" name="name" id="name" placeholder="Name" />
-                                        </div>
-                                        <div class="field half">
-                                            <input type="email" name="email" id="email" placeholder="Email" />
-                                        </div>
-                                        <div class="field">
-                                            <textarea name="message" id="message" placeholder="Message"></textarea>
-                                        </div>
-                                    </div>
-                                    <ul class="actions">
-                                        <li><input type="submit" value="Send" class="primary" /></li>
-                                    </ul>
-                                </form>
-                            </section>
-                            -->
-                            <section>
-                                <h2>Let's connect!</h2>
-                                
-                                <ul class="icons">
-                                    <li><a href="https://www.linkedin.com/in/elaine-guan-a06a55251/" target="_blank" class="icon brands style2 fa-linkedin"><span class="label">Linkedin</span></a></li>
-                                    <li><a href="https://github.com/elaineguan" target="_blank" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-                                    <li><a href="mailto:elaineguan@ucla.edu" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
-                                </ul>
-                            </section>
-                            <ul class="copyright">
-                                <li>&copy; Elaine Guan 2024</li>
-                        </div>
-                    </footer>
+                </li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="https://drive.google.com/file/d/1Ay7Tpg363TIfcJe9-VPDvfuf-nF8i93x/view?usp=sharing" target="_blank">RESUME</a></li>
+            </ul>
+        </nav>
 
+        <div id="main">
+            <div class="inner">
+                <header>
+                    <h1 style="text-align: left;">About Me</h1>
+                    <br><br>
+                    <img src="images/headshot.jpg" alt="" style="width:40%; height:auto; margin:10px 20px 10px 40px; float:right;">
+                    <div style="margin-right: 40px;">
+                        <p>Hi, I'm Elaine, a second-year linguistics and computer science student at UCLA!  I'm passionate about blending language, storytelling, and technology to design vibrant experiences that resonate with users.</p>
+                        <p>I enjoy working on projects that push me to think critically, whether it's building efficient algorithms, optimizing financial processes, or developing software solutions that enhance user experiences. Currently, I'm focused on software development and exploring how technology can drive innovation and efficiency in the financial sector.</p>
+                        <p>Feel free to contact me at <a href="mailto:elaineguan@ucla.edu">elaineguan@ucla.edu!</a></p>
+                        <strong>When I'm not coding, you can find me...</strong><br><br>
+                        🍵 sipping on green tea and matcha lattes<br>
+                        ✒️ journaling & penpalling<br>
+                        🐶 petting my dog, Filbert<br>
+                        ✈️ traveling and trying new cuisines<br>
+                        📖 reading <a href="https://www.goodreads.com/review/list/94226881-elaine?shelf=favorites&utf8=%E2%9C%93" target="_blank">(view my favorites here!)</a><br>
+                        🍲 making food for family and friends!
+                    </div>
+                    <br><br>
+                    <!-- <h2><a href="artwork.html">🎨 View my artwork here!</a></h2> -->
+                    <br><br>
+                </header>
             </div>
+        </div>
 
-        <!-- Scripts -->
-            <script src="assets/js/jquery.min.js"></script>
-            <script src="assets/js/browser.min.js"></script>
-            <script src="assets/js/breakpoints.min.js"></script>
-            <script src="assets/js/util.js"></script>
-            <script src="assets/js/main.js"></script>
+        <footer id="footer">
+            <div class="inner">
+                <section>
+                    <h2>Let's connect!</h2>
+                    <ul class="icons">
+                        <li><a href="https://www.linkedin.com/in/elaine-guan-a06a55251/" target="_blank" class="icon brands style2 fa-linkedin"><span class="label">Linkedin</span></a></li>
+                        <li><a href="https://github.com/elaineguan" target="_blank" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+                        <li><a href="mailto:elaineguan@ucla.edu" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+                    </ul>
+                </section>
+                <ul class="copyright">
+                    <li>&copy; Elaine Guan 2024</li>
+                </ul>
+            </div>
+        </footer>
+    </div>
 
-            <script>
-				document.addEventListener('contextmenu', event => event.preventDefault());
-				document.addEventListener('keydown', event => {
-					if (event.key === "F12" || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
-						event.preventDefault();
-					}
-				});
-			</script>
-
-    </body>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener('keydown', event => {
+            if (event.key === "F12" || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
 </html>
