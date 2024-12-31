@@ -1005,12 +1005,12 @@ input, select, textarea {
     box-shadow: none;
     /*transition: none;*/
     text-align: left;
-    margin-bottom: 3em; /* Increased bottom margin */
+    margin-bottom: 1em; /* Increased bottom margin */
     position: relative;
     width: 100%; /* Full width */
     display: flex; /* Arrange image and content side by side */
     align-items: center; /* Vertically align content */
-    padding: 2em; /* Padding around each tile */
+    padding: 1em; /* Padding around each tile */
 	text-decoration: none !important; /* Force removal of underline */
 	border: none !important;
     outline: none !important;
