@@ -13,26 +13,6 @@
     transform: scale(1.04); /* Slightly increase the size */
 }
 
-/* Basic header styles */
-#header {
-    position: relative;
-    width: 100%;
-    height: auto;
-    background: none;
-}
-
-
-/* Background image for the index page */
-body.index #header {
-    background-image: url('/images/homepage.png');
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    margin-top: 0;
-    padding-top: 0;
-    position: relative; /* Add this */
-    height: 65vh;
-}
 
 /* Non-index page header spacing */
 body:not(.index) #header {
@@ -87,7 +67,7 @@ body.index #header .inner {
     justify-content: flex-start; /* Prevent centering */
     position: relative;
     display: flex;
-	padding-top: 2rem; /* Adds space above the greeting */
+	padding-top: 0rem; /* Adds space above the greeting */
 }
 
 body.index #header .inner {
@@ -101,7 +81,7 @@ body:not(.index) #header .inner {
 
 /* Add padding to main content on non-index pages */
 body:not(.index) #main {
-    padding-top: 200px; 
+    padding-top: 0px; /* ABOUT TOP MARGIN*/
 }
 
 /* Index page main content doesn't need extra padding */
@@ -113,7 +93,7 @@ body.index #main {
 /* Greeting container styles */
 body.index .greeting-container {
     position: relative;
-    padding: 13rem 8rem;
+    padding: 16rem 8rem;
     z-index: 2;
 	
 }
@@ -123,68 +103,7 @@ body:not(.index) .greeting-container {
     padding: 6 8rem;
     display: none;
 }
-/* Keep your existing text styles unchanged */
 
-/* Styles for the typing animation */
-.name-intro { /*Elaine*/
-    font-family: 'DM Sans', sans-serif;
-    font-size: 50px;
-    color: #5588E2;
-    margin: -0.5rem 0;
-    padding: 0;
-    font-weight: 800;
-    text-align: left; /* Ensure it aligns to the left */
-    letter-spacing: 0.04em; /* Make letters closer together */
-    text-transform: none;
-    word-wrap: break-word;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 0.15em solid #5588E2; /* Cursor effect */
-    display: inline-block; /* Ensure it takes only the necessary space */
-    width: 0rem; /* Start with no width */
-    animation: 
-        typing 2s steps(18, end) forwards,
-        cursor 0.2s step-end infinite; /* Continuous cursor */
-    animation-delay: 0.1s; /* Delay the start of the typing animation by 1 second */
-}
-
-.name-intro .i-am {
-    color: #444444; /* Color for "I'm" */
-    display: inline-block; /* Ensure it's treated as part of the line */
-}
-/* Caret (cursor) */
-.name-intro::after {
-    content: '|';  /* The cursor symbol */
-    display: inline-block;
-    color: #5588E2;
-    animation: blink-caret 0.75s step-end infinite; /* Make it blink */
-}
-
-/* Cursor animation */
-@keyframes blink-caret {
-    from, to { opacity: 0 }
-    50% { opacity: 1 }
-}
-
-/* Typing animation */
-@keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%; /* Expand fully */
-    }
-}
-
-/* Cursor animation */
-@keyframes cursor {
-    from {
-        border-right-color: transparent;
-    }
-    to {
-        border-right-color: #5588E2; /* Cursor stays visible */
-    }
-}
 /* Responsive styles for smaller screens */
 @media screen and (max-width: 768px) {
     #header {
@@ -322,11 +241,6 @@ body:not(.index) .greeting-container {
     }
 }
 
-
-
-
-
-
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -421,12 +335,12 @@ input, select, textarea {
 		/* Default body background */
 	body {
 		background: #ffffff; /* White background for other pages */
-		overflow-x: hidden; 
 	}
 
 	/* Specific background color for about.html */
 	#about-page {
 		background: #ffffff; /* Replace with your desired background color */
+
 	}
 
 
@@ -441,8 +355,6 @@ input, select, textarea {
 			transition: none !important;
 		}
 		*/
-
-
 
 		
 /* Type */
@@ -476,14 +388,14 @@ input, select, textarea {
 		-webkit-transition: border-bottom-color 0.2s ease, color 0.2s ease;
 		-ms-transition: border-bottom-color 0.2s ease, color 0.2s ease;
 		transition: border-bottom-color 0.2s ease, color 0.2s ease;
-		text-decoration: none;
+        text-decoration: none !important; /* Remove underlines globally */
 		color: #585858;
 		border-bottom: dotted 1px rgba(88, 88, 88, 0.5);
 	}
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #5588E2 !important;
+			color: #a6bfe9 !important; /*HERE COLOR CHANGES TO THIS*/
 		}
 
 	strong, b {
@@ -700,22 +612,23 @@ input, select, textarea {
 		position: relative;
 	}
 
-	.icon:before {
-		-moz-osx-font-smoothing: grayscale;
-		-webkit-font-smoothing: antialiased;
-		display: inline-block;
-		font-style: normal;
-		font-variant: normal;
-		text-rendering: auto;
-		line-height: 1;
-		text-transform: none !important;
-		font-family: 'Font Awesome 5 Free';
-		font-weight: 400;
-	}
-	.icon:hover {
-		border-bottom-color: transparent;
-		color: #5588E2 !important; /*HERE COLOR CHANGES TO THIS*/
-	}
+		.icon:before {
+			-moz-osx-font-smoothing: grayscale;
+			-webkit-font-smoothing: antialiased;
+			display: inline-block;
+			font-style: normal;
+			font-variant: normal;
+			text-rendering: auto;
+			line-height: 1;
+			text-transform: none !important;
+			font-family: 'Font Awesome 5 Free';
+			font-weight: 400;
+		}
+        .icon:hover {
+			border-bottom-color: transparent;
+			color: #5588E2 !important; /*HERE COLOR CHANGES TO THIS*/
+		}
+
 		.icon > .label {
 			display: none;
 		}
@@ -731,6 +644,7 @@ input, select, textarea {
 		.icon.brands:before {
 			font-family: 'Font Awesome 5 Brands';
 		}
+
 
 			.icon.style2:before {
 				font-size: 1.1em;
@@ -931,261 +845,6 @@ input, select, textarea {
 			display: inline-block;
 			padding: 1em 0 0 1em;
 		}
-
-
-/* Image */
-
-	.image {
-		border-radius: 4px;
-		border: 0;
-		display: inline-block;
-		position: relative;
-	}
-
-		.image img {
-			border-radius: 4px;
-			display: block;
-		}
-
-		.image.left, .image.right {
-			max-width: 40%;
-		}
-
-			.image.left img, .image.right img {
-				width: 100%;
-			}
-
-		.image.left {
-			float: left;
-			padding: 0 1.5em 1em 0;
-			top: 0.25em;
-		}
-
-		.image.right {
-			float: right;
-			padding: 0 0 1em 1.5em;
-			top: 0.25em;
-		}
-
-		.image.fit {
-			display: block;
-			margin: 0 0 2em 0;
-			width: 100%;
-		}
-
-			.image.fit img {
-				width: 100%;
-			}
-
-		.image.main {
-			display: block;
-			margin: 0 0 3em 0;
-			width: 100%;
-		}
-
-			.image.main img {
-				width: 100%;
-			}
-
-			@media screen and (max-width: 736px) {
-
-				.image.main {
-					margin: 0 0 2em 0;
-				}
-
-			}
-
-/* General styles for all headers and links */
-.tiles article h4, 
-.tiles article h5, 
-.tiles article h6, 
-.tiles article a {
-    text-decoration: none !important; /* Ensure no underline */
-    border: none !important; /* Remove borders if any */
-    outline: none !important; /* Remove outline */
-}
-
-/* Specific button styling */
-.view-project {
-    text-decoration: none !important; /* Ensure no underline */
-    /* existing button styles */
-}
-
-.view-project:active,
-.view-project:hover {
-    text-decoration: none !important; /* Ensure no underline in hover/active */
-}
-
-			
-/* Button */
-.view-project {
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    -ms-appearance: none;
-    appearance: none;
-    -moz-transition: background-color 0.3s ease-out, color 0.3s ease-out, box-shadow 0.3s ease-out, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-transition: background-color 0.3s ease-out, color 0.3s ease-out, box-shadow 0.3s ease-out, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    -ms-transition: background-color 0.3s ease-out, color 0.3s ease-out, box-shadow 0.3s ease-out, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    transition: background-color 0.3s ease-out, color 0.3s ease-out, box-shadow 0.3s ease-out, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: #d4d9f5; /* Solid background color */
-    color: black; /* Black text */
-    border-radius: 30px;
-    border: 0;
-    box-shadow: none;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 0.8em;
-    font-weight: 900;
-    height: 3.5em;
-    letter-spacing: 0.15em;
-    line-height: 3.45em;
-    padding: 0 1.25em;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    white-space: nowrap;
-    min-width: 150px; /* Set minimum width */
-    max-width: 300px; /* Set maximum width */
-    margin-top: 1em; /* Add space above the button */
-	border: none !important;
-    outline: none !important;
-}
-
-.view-project:hover {
-    background-color: #B9D2F1; /* Hover background color */
-    color: black; /* Keep text black on hover */
-    transform: scale(1.05); /* Slightly increase size on hover */
-}
-
-.view-project:active {
-    background-color: rgba(212, 129, 65, 0.1); /* Lighter background on active */
-    transform: scale(0.98); /* Slightly shrink size on active */
-}
-
-/* Small button size */
-.view-project.small {
-    font-size: 0.6em;
-    min-width: 120px; /* Adjust min-width for small buttons */
-}
-
-
-
-/* General tile styles */
-.tiles article {
-    gap: -1em; /* Reduced space between the image and content */
-    border: none;
-    box-shadow: none;
-    /*transition: none;*/
-    text-align: left;
-    margin-bottom: 1em; /* Increased bottom margin */
-    position: relative;
-    width: 100%; /* Full width */
-    display: flex; /* Arrange image and content side by side */
-    align-items: center; /* Vertically align content */
-    padding: 1em; /* Padding around each tile */
-	text-decoration: none !important; /* Force removal of underline */
-	border: none !important;
-    outline: none !important;
-
-}
-
-/* Image styling */
-.tiles article .image {
-    flex: 0 0 45%; /* Image takes 45% of the width */
-    position: relative;
-    border-radius: 4px;
-    overflow: hidden;
-    transition: transform 0.4s ease-in-out;
-    padding: 0em; /* Removed padding around the image */
-}
-
-.tiles article .image img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Content styling */
-.tiles article .content {
-    flex: 0 0 65%; /* Content takes 65% of the width */
-    padding: 5em; /* Padding around the content */
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    gap: 1em; /* Space between header and description */
-}
-
-.tiles article h4 { /* title */
-	text-decoration: none;
-    color: #000000;
-    margin: 0;
-    letter-spacing: 0.055em;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 1.3em; /* Adjusted font size */
-    font-weight: 800;
-    line-height: 1.3; /* Adjust line spacing */
-    margin-bottom: 0.5em; /* Added bottom margin for spacing between h4 and h5 */
-}
-
-.tiles article h5 {
-	text-decoration: none;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 600;
-    font-size: 15px;
-    color: #979797;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    line-height: 1; /* Adjust line spacing */
-    margin-bottom: 0.2em; /* Added bottom margin for spacing between h5 and h6 */
-	margin-top: -1.15em; /* Reduced top margin to decrease space between h5 and h6 */
-
-}
-
-.tiles article h6 {
-	text-decoration: none;
-    margin: 0;
-    font-size: 0.9em; /* Reduced font size */
-    color: #666;
-	margin-top: -1.5em; /* Reduced top margin to decrease space between h5 and h6 */
-    line-height: 1.4; /* Adjust line spacing */
-}
-
-/* Anchor tag styling - ensure link covers clickable area */
-.tiles article a {
-    display: block;
-    position: relative;
-    text-decoration: none; /* Ensure no underline */
-    color: inherit;
-}
-
-/* Hover effect on image - only expand when hovering directly over the image */
-.tiles article .image a {
-    display: block; /* Ensure the link covers the image */
-    position: relative;
-    text-decoration: none; /* Remove underline from the link */
-    color: inherit; /* Keep text color */
-}
-
-.tiles article .image a:hover img {
-    transform: scale(1.05); /* Slight zoom effect */
-    transition: transform 0.4s ease-in-out;
-}
-
-/* Add to styles.css */
-a.image {
-    display: inline-block;
-    text-decoration: none;
-}
-
-a.image img {
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    display: block;
-}
-
-a.image:hover img {
-    transform: scale(1.1);
-    opacity: 1;
-}
 
 
 /* Optional: Responsive adjustments for smaller screens */
@@ -1408,7 +1067,7 @@ a.image:hover img {
     list-style-type: none;
     margin: 0px 0; /* Adds proper margin spacing */
     margin-left: -20px; /* Moves all items slightly to the left */
-    padding: 0;
+    padding: 0; /* Corrects invalid "0 px" to "0" */
     width: 100%;
 }
 
@@ -1559,7 +1218,7 @@ a.image:hover img {
 /* Footer */
 #footer {
     padding: 2em 0 3em 0;
-    background-color: #F3F2F0;
+    background-color: #fcfbf9;
 }
 
 .footer-text {
@@ -1664,7 +1323,6 @@ a.image:hover img {
 }
 
 
-
 /* Wrapper */
 
 	#wrapper > * > .inner {
@@ -1680,47 +1338,223 @@ a.image:hover img {
 				padding: 0 1.25em;
 			}
 
-		}
+		}	
 
-/* Wrapper */
-.about-container {
-	max-width: 800px;
-	margin: 40px auto;
-	padding: 20px;
-	background-color: #f7f7f7;
-	border: 1px solid #ddd;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	border-radius: 2em;
-  }
-  
-  .about-header {
-	font-family: 'DM Sans', sans-serif;
-	font-size: 1.1em;
-	letter-spacing: 0.15em;
-	word-spacing: 0.20em;
-	text-align: left;
-	margin-bottom: 20px;
-  }
-  
-  .about-content {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-  }
-  
-  .about-image {
-	width: 200px;
-	height: 200px;
-	margin-right: 20px;
-	border-radius: 10px;
-  }
-  
-  .about-text {
-	flex: 1;
-	font-family: 'DM Sans', sans-serif;
-	font-size: 16px;
-	line-height: 1.5;
-	margin-bottom: 20px;
-  }		
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    height:100%;
+    width:100%;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+}
 
-  
+.main-container {
+    position: relative;
+    min-height: 100vh;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 0px 200px; /* Ensure some padding on the sides */
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Cover the full viewport width */
+    height: 100vh; /* Cover the full viewport height */
+    background-image: url('/images/aboutpage.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 50px 0;
+    flex-wrap: wrap; /* Allow content to wrap on small screens */
+}
+
+.text-container { 
+    flex: 1;
+    margin-right: 20px;
+    margin-top: 5rem; /*change this for top padding*/
+    color: #444444;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center text */
+}
+
+.text-container a {
+    color:#5588E2; /* Link color */
+    text-decoration: none; /* Remove underlines globally */
+    border: none; /* Ensure no borders */
+    outline: none; /* Remove focus outlines, if undesired */
+    transition: color 0.3s ease; /* Smooth hover transition */
+}
+
+/* Ensure no dotted lines or focus outlines */
+.description a:focus,
+.description a:active {
+    outline: none;
+    text-decoration: none;
+}
+
+.text-container a {
+    color:  #5588E2;  /* Test basic color change */
+    text-decoration: none;
+}
+
+
+.greeting {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    color: #979797;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+    padding-top: 3rem;
+}
+
+.name-intro {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 40px;
+    color: #5588E2;
+    margin: 0.3rem 0 0.5rem 0;
+    padding: 0;
+    font-weight: 800;
+    text-align: left;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    word-wrap: break-word;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.name-intro .i-am {
+    color: #444444;
+}
+
+.name-intro .elaine {
+    color: #5588E2;
+    margin: 5vh 0 0.5rem 0;
+}
+
+.description-container {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    color: #444444;
+    line-height: 1.5;
+    margin-top: .5rem;
+}
+
+.description p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 1rem 0;
+}
+
+
+.activities {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.activities li {
+    font-size: 18px;
+    margin: 0.5rem 0;
+    line-height: 1.6;
+    color: #444444;
+}
+
+.activities li::before {
+    content: '✦    ';
+    color: #5588E2;
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Add some space between image and text */
+}
+
+.image-container img {
+    max-width: 90%;
+    border-radius: 00px;
+}
+
+
+
+/* Media Queries for Responsiveness */
+
+/* For smaller screens (e.g., mobile devices) */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column; /* Stack text and image */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .text-container {
+        margin-right: 0; /* Remove the right margin */
+        text-align: center; /* Center text for small screens */
+    }
+
+    .name-intro {
+        font-size: 30px; /* Adjust font size for smaller screens */
+    }
+
+    .greeting {
+        font-size: 18px;
+        padding-top: 10vh; /* Increase top padding on small screens */
+    }
+
+    .description-container {
+        font-size: 16px;
+    }
+
+    .image-container {
+        margin-top: 20px; /* Ensure image has some space above */
+    }
+
+    .activities li {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+}
+
+/* For very small screens (e.g., mobile phones in portrait mode) */
+@media (max-width: 480px) {
+    .name-intro {
+        font-size: 26px; /* Make name smaller on very small screens */
+    }
+
+    .greeting {
+        font-size: 16px;
+    }
+
+    .description-container {
+        font-size: 14px;
+    }
+
+    .activities li {
+        font-size: 14px; /* Smaller text on very small screens */
+    }
+}
