@@ -185,66 +185,60 @@ body:not(.index) .greeting-container {
         border-right-color: #5588E2; /* Cursor stays visible */
     }
 }
-/* Responsive styles for smaller screens */
-@media screen and (max-width: 768px) {
-    #header {
-        padding-left: 0; /* Remove left padding */
-        justify-content: center; /* Center content */
-        text-align: center; /* Center text */
+/* Adjustments for smaller screens */
+@media screen and (max-width: 736px) {
+    #header .greeting-container {
+        margin-top: 150px; /* Increase top margin significantly */
+        padding: 0 15px; /* Add side padding for better spacing */
+		text-align: center;
     }
 
-    /* Adjust greeting container padding for smaller screens */
-    body.index .greeting-container {
-        padding: 3rem 2rem; /* Reduce padding for smaller screens */
+    #header h1.name-intro {
+        font-size: 2.5rem; /* Reduce font size for smaller screens */
+        margin-bottom: 10px; /* Add some spacing below the name */
+		text-align: center;
+
     }
 
-    /* Adjust intro text size for smaller screens */
-    .name-intro {
-        font-size: 40px; /* Reduce heading size */
+    #header .ipa-text {
+        font-size: 16px; /* Slightly smaller text for better readability */
+		text-align: center;
+
     }
 
-    .ipa-text {
-        font-size: 18px; /* Slightly reduce font size */
+    #header ol.intro-list {
+        font-size: 14px; /* Reduce font size for the intro list */
     }
 
-    .intro-list {
-        margin-top: 2rem; /* Adjust margin for smaller screens */
-    }
-
-    .intro-text {
-        font-size: 18px; /* Reduce text size */
-        max-width: 90%; /* Ensure it fits within the screen */
+    #header ol.intro-list li {
+        padding-left: 10px; /* Adjust padding to fit smaller screens */
     }
 }
 
+/* Adjustments for very small screens (phones) */
 @media screen and (max-width: 480px) {
-    #header {
-        padding-left: 0; /* Ensure no padding on the smallest screens */
-        justify-content: center; /* Keep content centered */
-        text-align: center; /* Center text */
+    #header .greeting-container {
+        margin-top: 300px; /* Further increase top margin */
+		text-align: center;
     }
 
-    /* Further reduce greeting container padding */
-    body.index .greeting-container {
-        padding: 2rem 1rem; /* Further adjust padding for very small screens */
+    #header h1.name-intro {
+        font-size: 1.3rem; /* Further shrink text size */
+		text-align: center;
+
     }
 
-    /* Adjust intro text size for the smallest screens */
-    .name-intro {
-        font-size: 30px; /* Adjust heading for smaller screens */
+    #header .ipa-text {
+        font-size: 14px; /* Smaller IPA text */
+        margin-bottom: 8px; /* Adjust spacing */
     }
 
-    .ipa-text {
-        font-size: 16px; /* Further adjust font size */
+    #header ol.intro-list {
+        font-size: 12px; /* Smaller list text */
     }
 
-    .intro-text {
-        font-size: 16px; /* Further adjust text size */
-        max-width: 100%; /* Make it fully responsive */
-    }
-
-    .intro-list {
-        margin-top: 1rem; /* Adjust margin for very small screens */
+    #header ol.intro-list li {
+        padding-left: 5px; /* Minimize padding for compact view */
     }
 }
 
@@ -998,7 +992,7 @@ input, select, textarea {
 
 /* General styles for all headers and links */
 .tiles article h4 {
-	font-size: 1.1em;
+	font-size: .1em;
 	letter-spacing: 0.10em;
 	word-spacing: 0.10em;
 	margin-bottom: 0;
@@ -1533,35 +1527,53 @@ a.image:hover img {
     color: #5588E2;
 }
 
+
 /* Responsive design for smaller screens */
 @media screen and (max-width: 736px) {
     #top-menu {
-        padding: 0 20px;
+        padding: 10px 20px; /* Reduced padding */
+        display: flex;
+        justify-content: flex-end; /* Align items to the top right */
+        align-items: center;
     }
 
     #top-menu ul {
-        flex-direction: column;
-        align-items: flex-end;
+        flex-direction: row; /* Align items horizontally */
+        justify-content: flex-end; /* Push to the right */
+        gap: 5px; /* Small spacing between items */
+        padding: 0; /* Remove extra padding if present */
     }
 
     #top-menu ul li {
-        margin: 10px 0;
+        margin: 0; /* Remove extra margin */
+        font-size: 19px; /* Make text smaller */
+        line-height: 1.2; /* Compact spacing */
     }
+	#top-menu .logo .title {
+		display: none;
+	}	
+
 
     #main {
-        padding-top: 80px;
+        padding-top: 60px; /* Adjust to allow for smaller top menu */
     }
 
     #top-menu .logo {
-        margin-left: 0;
-        order: 1;
+        margin-left: auto; /* Push logo to the left */
+        order: -1; /* Ensure logo comes first */
+        font-size: 16px; /* Adjust logo size */
     }
 
+
     #top-menu .dropdown-content {
-        position: static;
-        width: 100%;
+        display: none !important; /* Ensure dropdown is hidden */
+    }
+
+    #top-menu .dropdown-toggle:after {
+        display: none !important; /* Remove toggle indicator */
     }
 }
+
 
 
 /* Footer */
