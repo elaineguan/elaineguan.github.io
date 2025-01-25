@@ -1067,7 +1067,7 @@ input, select, textarea {
     list-style-type: none;
     margin: 0px 0; /* Adds proper margin spacing */
     margin-left: -20px; /* Moves all items slightly to the left */
-    padding: 0; /* Corrects invalid "0 px" to "0" */
+    padding: 0;
     width: 100%;
 }
 
@@ -1184,36 +1184,52 @@ input, select, textarea {
     color: #5588E2;
 }
 
+
 /* Responsive design for smaller screens */
 @media screen and (max-width: 736px) {
     #top-menu {
-        padding: 0 20px;
+        padding: 10px 20px; /* Reduced padding */
+        display: flex;
+        justify-content: flex-end; /* Align items to the top right */
+        align-items: center;
     }
 
     #top-menu ul {
-        flex-direction: column;
-        align-items: flex-end;
+        flex-direction: row; /* Align items horizontally */
+        justify-content: flex-end; /* Push to the right */
+        gap: 5px; /* Small spacing between items */
+        padding: 0; /* Remove extra padding if present */
     }
 
     #top-menu ul li {
-        margin: 10px 0;
+        margin: 0; /* Remove extra margin */
+        font-size: 19px; /* Make text smaller */
+        line-height: 1.2; /* Compact spacing */
     }
+	#top-menu .logo .title {
+		display: none;
+	}	
+
 
     #main {
-        padding-top: 80px;
+        padding-top: 60px; /* Adjust to allow for smaller top menu */
     }
 
     #top-menu .logo {
-        margin-left: 0;
-        order: 1;
+        margin-left: auto; /* Push logo to the left */
+        order: -1; /* Ensure logo comes first */
+        font-size: 16px; /* Adjust logo size */
     }
+
 
     #top-menu .dropdown-content {
-        position: static;
-        width: 100%;
+        display: none !important; /* Ensure dropdown is hidden */
+    }
+
+    #top-menu .dropdown-toggle:after {
+        display: none !important; /* Remove toggle indicator */
     }
 }
-
 
 /* Footer */
 #footer {
@@ -1505,17 +1521,52 @@ body, html {
 
 /* Media Queries for Responsiveness */
 
+/* For medium screens (e.g., tablets and small laptops) */
+@media (max-width: 1024px) {
+    .content {
+        flex-direction: column; /* Stack text and image */
+        justify-content: center;
+        align-items: center;
+        padding: 40px 2rem; /* Reduce padding for medium screens */
+    }
+
+    .text-container {
+        margin-right: 0; /* Ensure no horizontal margin */
+    }
+
+    .name-intro {
+        font-size: 36px; /* Adjust font size for medium screens */
+    }
+
+    .greeting {
+        font-size: 20px; /* Slightly smaller text */
+        padding-top: 8vh; /* Adjust top padding */
+    }
+
+    .description-container {
+        font-size: 18px; /* Adjust font size for better readability */
+    }
+
+    .image-container {
+        margin-top: 15px; /* Reduce image margin */
+    }
+
+    .activities li {
+        font-size: 16px; /* Consistent font size */
+    }
+
+    .main-container {
+        padding: 0px 4rem; /* Reduce side padding */
+    }
+}
+
 /* For smaller screens (e.g., mobile devices) */
 @media (max-width: 768px) {
     .content {
         flex-direction: column; /* Stack text and image */
         justify-content: center;
         align-items: center;
-    }
-
-    .text-container {
-        margin-right: 0; /* Remove the right margin */
-        text-align: center; /* Center text for small screens */
+        padding: 30px 1.5rem; /* Further reduce padding */
     }
 
     .name-intro {
@@ -1524,7 +1575,7 @@ body, html {
 
     .greeting {
         font-size: 18px;
-        padding-top: 10vh; /* Increase top padding on small screens */
+        padding-top: 6vh; /* Reduce top padding */
     }
 
     .description-container {
@@ -1532,22 +1583,35 @@ body, html {
     }
 
     .image-container {
-        margin-top: 20px; /* Ensure image has some space above */
+        margin-top: 15px; /* Ensure image has space above */
     }
 
     .activities li {
-        font-size: 16px; /* Adjust font size for smaller screens */
+        font-size: 15px; /* Slightly smaller text */
+    }
+
+    .main-container {
+        padding: 0px 2rem; /* Decrease side padding */
     }
 }
 
 /* For very small screens (e.g., mobile phones in portrait mode) */
 @media (max-width: 480px) {
+    .content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 1rem; /* Minimal padding on small devices */
+    }
+
     .name-intro {
-        font-size: 26px; /* Make name smaller on very small screens */
+        font-size: 26px;
+        text-align: center;
     }
 
     .greeting {
         font-size: 16px;
+        text-align: center;
     }
 
     .description-container {
@@ -1555,6 +1619,11 @@ body, html {
     }
 
     .activities li {
-        font-size: 14px; /* Smaller text on very small screens */
+        font-size: 14px; /* Smaller text */
+    }
+
+    .main-container {
+        padding: 0px 1rem; /* Minimal side padding */
     }
 }
+

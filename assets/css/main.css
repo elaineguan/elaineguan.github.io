@@ -218,7 +218,7 @@ body:not(.index) .greeting-container {
 /* Adjustments for very small screens (phones) */
 @media screen and (max-width: 480px) {
     #header .greeting-container {
-        margin-top: 8rem; /* Further increase top margin */
+        margin-top: 10rem; /* Further increase top margin */
 		text-align: center;
     }
 
@@ -318,9 +318,6 @@ body:not(.index) .greeting-container {
 
 
 
-
-
-
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -406,6 +403,8 @@ input, select, textarea {
 
 	html {
 		box-sizing: border-box;
+		scroll-behavior: smooth;
+
 	}
 
 	*, *:before, *:after {
@@ -1196,6 +1195,8 @@ a.image:hover img {
         flex-direction: column; /* Stack image and content vertically on small screens */
         text-align: center; /* Center align text */
         padding: 1.5em; /* Adjust padding for smaller screens */
+		text-align: center;
+
     }
 
     .tiles article .image {
@@ -1211,10 +1212,18 @@ a.image:hover img {
 
     .tiles article h4 {
         font-size: 1em; /* Further reduce font size for small screens */
+		text-align: center;
+
     }
 
+	.tiles article h5 {
+		text-align: center;
+	}
+	
     .tiles article h6 {
         font-size: 0.8em; /* Further reduce font size for small screens */
+		text-align: center;
+
     }
 }
 
