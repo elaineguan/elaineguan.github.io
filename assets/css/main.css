@@ -31,7 +31,7 @@ body.index #header {
     margin-top: 0;
     padding-top: 0;
     position: relative;
-    height: 39rem; /* Maintains the section height at 65% of the viewport height */
+    height: 33rem; /* Maintains the section height at 65% of the viewport height */
 }
 
 
