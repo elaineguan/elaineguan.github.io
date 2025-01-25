@@ -218,18 +218,18 @@ body:not(.index) .greeting-container {
 /* Adjustments for very small screens (phones) */
 @media screen and (max-width: 480px) {
     #header .greeting-container {
-        margin-top: 300px; /* Further increase top margin */
+        margin-top: 8rem; /* Further increase top margin */
 		text-align: center;
     }
 
     #header h1.name-intro {
-        font-size: 1.3rem; /* Further shrink text size */
+        font-size: 2.3rem; /* Further shrink text size */
 		text-align: center;
 
     }
 
     #header .ipa-text {
-        font-size: 14px; /* Smaller IPA text */
+        font-size: 3rem; /* Smaller IPA text */
         margin-bottom: 8px; /* Adjust spacing */
     }
 
