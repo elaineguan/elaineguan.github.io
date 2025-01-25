@@ -25,14 +25,15 @@
 /* Background image for the index page */
 body.index #header {
     background-image: url('/images/homepage.png');
-    background-size: cover;
+    background-size: cover; /* Ensures the width fills the screen */
     background-position: center top;
     background-repeat: no-repeat;
     margin-top: 0;
     padding-top: 0;
-    position: relative; /* Add this */
-    height: 65vh;
+    position: relative;
+    height: 39rem; /* Maintains the section height at 65% of the viewport height */
 }
+
 
 /* Non-index page header spacing */
 body:not(.index) #header {
