@@ -395,7 +395,7 @@ input, select, textarea {
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #a6bfe9 !important; /*HERE COLOR CHANGES TO THIS*/
+			color: #a6bfe9; /*HERE COLOR CHANGES TO THIS*/
 		}
 
 	strong, b {
@@ -407,8 +407,13 @@ input, select, textarea {
 	}
 
 	p {
-		margin: 0 0 2em 0;
-	}
+        margin: 0 0 2em 0;
+    }
+    
+    p a:hover {
+        color: #e9a6d3;
+    }
+    
 
 	h1 {
 		font-size: 2.75em;
